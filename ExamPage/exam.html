@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="exam.css">
-  <script src="../jquery.js"></script>
-</head>
-<body>
-  
-  <script src="exam.js"></script>
-</body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam</title>
+    <link rel="stylesheet" href="exam.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../jquery.js"></script>
+  </head>
+  <body>
+    <div class="background-circle"></div>
+    <div class="content">
+      <div class="question">
+        <div class="top-section">
+          <p class="exam-name">Javascript Exam</p>
+
+          <div class="timer">
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <p class="time">6:00</p>
+            </div>
+            <p class="remaining">Remaining</p>
+          </div>
+        </div>
+        <div class="mid-section">
+          <div class="titleAndMark">
+            <div class="q">
+              <div><p>1</p></div>
+              <p>HTML Stands for</p>
+            </div>
+            <div class="mark"><i class="fa-regular fa-bookmark"></i></div>
+          </div>
+          <div class="option"><p>a. Hypertransfer Markup Language</p></div>
+          <div class="option"><p>b. Human transcript Mobile Language</p></div>
+          <div class="option"><p>c. Hypertext Markup Language</p></div>
+          <div class="option"><p>d. Hyper Transaction Markup Language</p></div>
+          <div class="q-number"><p>1/10</p></div>
+        </div>
+        <div class="bottom-section">
+          <div class="back"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="submit"><p>Submit</p></div>
+          <div class="next"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="marked"><p>Marked Questions</p></div>
+      </div>
+    </div>
+
+    <script src="exam.js"></script>
+  </body>
 </html>
