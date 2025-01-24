@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp into ITI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="background-circle"></div>
+    <div class="background-circle2"></div>
+    <div class="main">
+        <div class="obj-3d"><img class="book-img" src="..\images\book2.svg" alt=""></div>
+        <div class="content">
+            <h3>Welcome!</h3>
+            <form class="form-data" action="">
+                <label for="fn">First Name</label>
+                <input type="text" id="fn" name="fname" placeholder="Sam">
+                <label for="ln">Last Name</label>
+                <input type="text" id="ln" name="lname" placeholder="Smith">
+                <label for="em">Email</label>
+                <input type="email" id="em" name="email" placeholder="example@mail.com">
+                <label for="pw">Password</label>
+                <div class="pwd-input">
+                    <input type="password" id="pw" name="pwd" placeholder="***********">
+                    <img id="pwd-eye" src="..\images\iconoir_eye.svg" alt="Show Password">
+                </div>
+                <label for="pw">Confirm Password</label>
+                <div class="pwd-input">
+                    <input type="password" id="pw" name="pwd" placeholder="***********">
+                    <img id="pwd-eye" src="..\images\iconoir_eye.svg" alt="Show Password">
+                </div>
+                <button type="submit" id="submit-btn"><h4>Sign Up</h4></button>
+            </form>
+            <p>Already have an account? <a id="signUp-link" href="..\index.html">Login</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
