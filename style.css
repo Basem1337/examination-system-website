@@ -127,6 +127,7 @@ input{
 }
 
 #submit-btn:hover{
+    cursor: pointer;
     background-color: #af1937;
 }
 
@@ -137,4 +138,9 @@ input{
 #signUp-link{
     text-decoration: none;
     color: #D42044;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }

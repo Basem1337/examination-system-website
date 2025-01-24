@@ -127,6 +127,7 @@ input{
 }
 
 #submit-btn:hover{
+    cursor: pointer;
     background-color: #af1937;
 }
 
