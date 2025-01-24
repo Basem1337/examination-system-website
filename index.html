@@ -6,10 +6,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap">
     <script src="jquery.js"></script>
 </head>
 <body>
-    
+    <div class="background-circle"></div>
+    <div class="main">
+        <div class="obj-3d"><img class="book-img" src="images\book1.svg" alt=""></div>
+        <div class="content">
+            <h3>Welcome Back!</h3>
+            <form class="form-data" action="">
+                <label for="fn">Email</label>
+                <input type="text" id="fn" name="fname" placeholder="example@mail.com">
+                <label for="pw">Password</label>
+                <div class="pwd-input">
+                    <input type="password" id="pw" name="pwd" placeholder="***********">
+                    <img id="pwd-eye" src="images\iconoir_eye.svg" alt="Show Password">
+                </div>
+                <button type="submit" id="submit-btn"><h4>Log in</h4></button>
+            </form>
+            <p>Don't have an account? <a id="signUp-link" href="signUpPage\index.html">Sign Up</a></p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

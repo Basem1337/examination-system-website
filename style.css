@@ -1,0 +1,132 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Alexandria;
+}
+
+body {
+    background-color: rgba(36, 36, 36, 1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.obj-3d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.user-cont{
+    width: 250px;
+    height: 624px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+}
+
+.book-img{
+    padding-top: 20%;
+    width: 60%;
+}
+
+.background-circle {
+    width: 800px;
+    height: 800px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    opacity: 0.5;
+    background: #D42044;
+    position: absolute;
+    filter: blur(250px);
+    top: auto;
+    left: auto;
+    bottom: -400px;
+    right: auto;
+    transform: translateX(50%);
+    z-index: -1;
+}
+
+.content {
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 590px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 12px 12px 20px 0px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+.form-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5%;
+}
+
+label{
+    margin-top: 20px;
+}
+
+input{
+    padding: 10px;
+    width: 100%;
+    height: 48px;
+    border: 2px solid #D9D9D9;
+    border-radius: 10px;
+}
+
+.pwd-input{
+    display: flex;
+}
+
+#pwd-eye{
+    display: flex;
+    position: absolute;
+    right: 7%;
+    width: 48px;
+    height: 48px;
+    padding: 14px 6px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#submit-btn{
+    margin-top: 30px;
+    width: 100%;
+    height: 48px;
+    background-color: #D42044;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+#submit-btn:hover{
+    background-color: #af1937;
+}
+
+.form-data ~ p{
+    font-size: 12px;
+}
+
+#signUp-link{
+    text-decoration: none;
+    color: #D42044;
+}
