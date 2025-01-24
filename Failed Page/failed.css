@@ -1,0 +1,89 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Alexandria;
+
+}
+
+body {
+  background-color: rgba(36, 36, 36, 1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.background-circle {
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  opacity: 0.5;
+  background: #D42044;
+  position: absolute;
+  filter: blur(250px);
+  top: auto;
+  left: auto;
+
+  right: 50%;
+  transform: translateX(50%);
+  z-index: -1;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 70px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: #FFF;
+
+}
+
+.exam-name {
+  color: #000;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.exam-degree {
+  color: #D42044;
+  text-align: center;
+  font-size: 98px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.message{
+  align-items: center;
+justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sorry {
+  color: #D42044;
+  text-align: center;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inner-message {
+  width: 300px;
+  color: #818181;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
