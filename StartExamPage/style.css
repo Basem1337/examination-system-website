@@ -1,0 +1,165 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Alexandria;
+}
+
+body {
+    background-color: rgba(36, 36, 36, 1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.obj-3d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.user-cont{
+    width: 250px;
+    height: 624px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+}
+
+.exmo-logo{
+    width: 40%;
+}
+
+.background-circle{
+    width: 500px;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    opacity: 0.5;
+    background: #D42044;
+    position: absolute;
+    filter: blur(250px);
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: 400px;
+    transform: translateX(50%);
+    z-index: -1;
+}
+
+.content {
+    margin: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 40%;
+    height: 590px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.duration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.ex-name{
+    color: #D42044;
+}
+
+.form-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5%;
+}
+
+#submit-btn{
+    margin-top: 30px;
+    width: 100%;
+    height: 48px;
+    background-color: #D42044;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+#submit-btn:hover{
+    background-color: #af1937;
+}
+
+.form-data ~ p{
+    font-size: 12px;
+}
+
+.fa-clock{
+    color: #D42044;
+}
+
+.ex-dura{
+    color: #818181;
+}
+
+.upper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.lower{
+    display: flex;
+    flex-direction: column;
+}
+
+#test-dura, a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.cheer{
+    color: #FF7C7C;
+    opacity: 0.5;
+}
+
+.sub{
+    color: #818181;
+}
+
+.rul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ul > li{
+    margin-left: 8%;
+    list-style: disc;
+}
+
+ol{
+    color: white;
+    list-style: none;
+}
+
+.wave{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -3;
+    width: 55%;
+    /* filter: saturate(0); */
+}
