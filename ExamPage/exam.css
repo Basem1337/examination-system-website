@@ -75,6 +75,7 @@ body {
 }
 
 .timer {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,6 +84,7 @@ body {
 }
 
 .timer>div {
+  width: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -98,6 +100,17 @@ body {
   color: #20D43B;
   font-size: 36px;
   font-weight: 600;
+
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.shake {
+  animation: shake 0.5s ease;
 }
 
 .remaining {
