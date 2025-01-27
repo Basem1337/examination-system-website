@@ -351,10 +351,10 @@ body {
   height: 10%;
   display: flex;
   gap: 20px;
-  justify-content: center;
   align-items: center
 }
 #close{
+  display: none;
   cursor: pointer;
 }
 
