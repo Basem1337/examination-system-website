@@ -1,3 +1,9 @@
+:root {
+  --exam-name: 24px;
+  --exam-deg: 98px;
+  --sorry: 38px;
+  --innermessage: 18px;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -47,7 +53,7 @@ body {
 .exam-name {
   color: #000;
   text-align: center;
-  font-size: 24px;
+  font-size: var(--exam-name);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -56,7 +62,7 @@ body {
 .exam-degree {
   color: #D42044;
   text-align: center;
-  font-size: 98px;
+  font-size: var(--exam-deg);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -72,7 +78,7 @@ justify-content: center;
 .sorry {
   color: #D42044;
   text-align: center;
-  font-size: 38px;
+  font-size: var(--sorry);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -82,8 +88,21 @@ justify-content: center;
   width: 300px;
   color: #818181;
   text-align: center;
-  font-size: 18px;
+  font-size: var(--innermessage);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+  }
+  :root {
+    --sorry: 32px;
+    --exam-name: 20px;
+    --exam-deg: 88px;
+    --innermessage: 14px;
+  }
 }
