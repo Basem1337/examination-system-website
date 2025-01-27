@@ -39,3 +39,35 @@ let x = setInterval(() => {
   }
 }, 1000);
 ////////////////
+//function to show the marked section as a menue and hide it when the size of window returns to normal.
+$(".menu").on("click", function () {
+  $("#close").css("display", "flex");
+  $(".menu").css("display", "none");
+  $(".marked")
+    .css("display", "flex")
+    .css("position", "absolute")
+    .css("width", "500px");
+});
+$(window).on("resize", function () {
+  if ($(window).width() < 600) {
+    $(".menu").css("display", "flex");
+  }
+});
+$(window).on("resize", function () {
+  if ($(window).width() > 600) {
+    $(".menu").css("display", "none");
+    $(".marked").css({
+      display: "flex",
+      position: "relative",
+      width: "80%",
+      height: "84%",
+    });
+    $("#close").css("display", "none");
+  }
+});
+////////////////////
+///////close the marked section on the lower size screens.
+$("#close").on("click", function () {
+  $(".marked").css("display", "none");
+  $(".menu").css("display", "flex");
+});

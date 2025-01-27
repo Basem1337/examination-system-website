@@ -1,3 +1,18 @@
+:root {
+  --exam-name: 24px;
+  --timer-div: 36px;
+  --timer: 36px;
+  --remaining: 14px;
+  --mark: 20px;
+  --q-p: 18px;
+  --option: 16px;
+  --q-num: 18px;
+  --back: 30px;
+  --submit: 18px;
+  --next: 30px;
+  --marked: 20px --menu:20px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -44,6 +59,13 @@ body {
   z-index: 2;
 }
 
+.menu {
+  display: none;
+  font-size: var(--menu);
+
+}
+
+
 
 .question {
   display: flex;
@@ -62,7 +84,7 @@ body {
   left: 45px;
   top: 30px;
   color: #D42044;
-  font-size: 24px;
+  font-size: var(--exam-name);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -72,10 +94,11 @@ body {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .timer {
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +113,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 36px;
+  font-size: var(--timer-div);
   color: #000000;
 }
 
@@ -98,17 +121,33 @@ body {
 
 .time {
   color: #20D43B;
-  font-size: 36px;
+  font-size: var(--timer);
   font-weight: 600;
 
 }
+
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
+
 .shake {
   animation: shake 0.5s ease;
 }
@@ -116,7 +155,7 @@ body {
 .remaining {
   margin: 0;
   color: #B6B6B6;
-  font-size: 14px;
+  font-size: var(--remaining);
   font-weight: 400;
   text-align: center;
 }
@@ -146,7 +185,7 @@ body {
   border-radius: 10px;
   background: #EBEBEB;
   color: #D42044;
-  font-size: 20px;
+  font-size: var(--mark);
 
 }
 
@@ -160,7 +199,7 @@ body {
 }
 
 .q>p {
-  font-size: 18px;
+  font-size: var(--q-p);
 }
 
 .q>div {
@@ -187,7 +226,7 @@ body {
   border: 2px solid #D9D9D9;
   background: #E9E9E9;
   color: #818181;
-  font-size: 16px;
+  font-size: var(--option);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -207,7 +246,7 @@ body {
   height: 40px;
   border-radius: 10px;
   color: #B6B6B6;
-  font-size: 18px;
+  font-size: var(--q-num);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -232,7 +271,7 @@ body {
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(233, 233, 233, 1);
-  font-size: 30px;
+  font-size: var(--back);
   color: rgb(255, 255, 255);
 }
 
@@ -249,9 +288,8 @@ body {
   flex-shrink: 0;
   border-radius: 10px;
   background: #D42044;
-  font-size: 30px;
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: var(--submit);
 }
 
 .submit:hover {
@@ -270,7 +308,7 @@ body {
   flex-shrink: 0;
   border-radius: 10px;
   background: rgba(255, 124, 124, 1);
-  font-size: 30px;
+  font-size: var(--next);
   color: rgb(255, 255, 255);
 }
 
@@ -279,24 +317,8 @@ body {
 }
 
 .active {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  margin-top: 2%;
-  align-self: center;
-  width: 94%;
-  height: 40px;
-  border-radius: 10px;
-  border: 2px solid #D9D9D9;
-
   background: #3C3C3C;
   color: #FFF;
-
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .active:hover {
@@ -312,18 +334,104 @@ body {
   height: auto;
   flex-shrink: 0;
   border-radius: 10px;
+
+}
+
+.marked {
   
+  width: 80%;
+  height: 84%;
+  border-radius: 10px;
+  border: 2px solid #D9D9D9;
+  background: #E9E9E9;
+  font-size: var(--marked);
 }
-.marked{
-width: 80%;
-height: 84%;
-border-radius: 10px;
-border: 2px solid #D9D9D9;
-background: #E9E9E9;
+.marked .top{
+  padding: 0px 0px 0px 20px;
+  height: 10%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center
 }
-.marked>p{
+#close{
+  cursor: pointer;
+}
+
+.marked>p {
   position: relative;
   top: 15px;
   left: 15px;
+
+}
+
+@media (min-width: 551px) and (max-width: 780px) {
+
+  .next {
+    width: 10%;
+  }
+
+  .back {
+    width: 10%;
+  }
+
+  .submit {
+    width: 73%;
+  }
+
+
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  :root {
+    --exam-name: 22px;
+    --timer-div: 34px;
+    --timer: 34px;
+    --remaining: 14px;
+    --mark: 20px;
+    --q-p: 16px;
+    --option: 14px;
+    --q-num: 16px;
+    --back: 28px;
+    --submit: 16px;
+    --next: 28px;
+    --marked: 18px;
+    --menu: 28px;
+
+  }
+
+  .menu {
+    display: flex;
+    color:#3C3C3C;
+    cursor: pointer;
+  }
+  .menu:hover{
+    color: #737373;
+  }
+
+  .marked {
+    display: none;
+  }
+
+  .side {
+    width:0%;
+  }
+
+  .question {
+    width: 100%;
+  }
+
+  .next {
+    width: 12%;
+  }
+
+  .back {
+    width: 12%;
+  }
+
+  .submit {
+    width: 69%;
+  }
+
 
 }
