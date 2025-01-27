@@ -1,3 +1,9 @@
+:root {
+  --exam-name: 24px;
+  --icon: 140px;
+  --sorry: 38px;
+  --innermessage: 18px;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -48,20 +54,13 @@ body {
 .exam-name {
   color: #000;
   text-align: center;
-  font-size: 24px;
+  font-size: var(--exam-name);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.exam-degree {
-  color: #D42044;
-  text-align: center;
-  font-size: 98px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+
 .message{
   align-items: center;
   justify-content: center;
@@ -73,7 +72,7 @@ body {
 .sorry {
   color: #D42044;
   text-align: center;
-  font-size: 38px;
+  font-size: var(--sorry);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -83,12 +82,25 @@ body {
   width: 300px;
   color: #818181;
   text-align: center;
-  font-size: 18px;
+  font-size: var(--innermessage);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 i{
   color: #D42044;
-  font-size: 150px;
+  font-size: var(--icon);
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+  }
+  :root {
+    --exam-name: 18px;
+    --icon: 95px;
+    --sorry: 32px;
+    --innermessage: 14px;
+  }
 }
