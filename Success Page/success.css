@@ -1,3 +1,10 @@
+:root {
+  --exam-name: 24px;
+  --exam-deg: 98px;
+  --congrats: 38px;
+  --innermessage: 18px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -47,7 +54,7 @@ body {
 .exam-name {
   color: #000;
   text-align: center;
-  font-size: 24px;
+  font-size: var(--exam-name);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -56,21 +63,23 @@ body {
 .exam-degree {
   color: #20D43B;
   text-align: center;
-  font-size: 98px;
+  font-size: var(--exam-deg);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.message{
+
+.message {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .congrats {
   color: #20D43B;
   text-align: center;
-  font-size: 38px;
+  font-size: var(--congrats);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -79,8 +88,22 @@ body {
 .inner-message {
   color: #818181;
   text-align: center;
-  font-size: 18px;
+  font-size: var(--innermessage);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+  }
+  :root {
+    --exam-name: 20px;
+    --exam-deg: 88px;
+    --congrats: 32px;
+    --innermessage: 14px;
+  }
 }
