@@ -65,21 +65,27 @@ $("#close").on("click", function () {
 ////////////////////////////////
 /////////////////////////////////////////////////////////////////
 
+function randNum(min, max) {
+  return Math.ceil(Math.random() * (max - min)) + min - 1;
+}
+
 let questions = [];
 let currentIndex = 0;
+let questIndex = randNum(0, 9);
 let userAnswers = [];
 
 $.getJSON("questions.json", function (data) {
   questions = data;
   userAnswers = Array(questions.length).fill(null);
-  displayQuestion(currentIndex);
+  displayQuestion(questIndex);
 });
 
+
 function displayQuestion(index) {
-  const question = questions[index];
+  const question = questions[index%questions.length];
   $(".question-text").text(question.question);
-  $(".q-number").text(`${index + 1}/${questions.length}`);
-  $(".num").text(`${index + 1}`);
+  $(".q-number").text(`${currentIndex + 1}/${questions.length}`);
+  $(".num").text(`${currentIndex + 1}`);
 
   $(".option").remove();
 
@@ -101,7 +107,7 @@ $(".mid-section").on("click", ".option", function () {
   $(this).addClass("active");
 
   const selectedIndex = $(this).data("index");
-  userAnswers[currentIndex] = selectedIndex;
+  userAnswers[questIndex] = selectedIndex;
 });
 
 $(".next").on("click", function () {
@@ -114,7 +120,7 @@ $(".next").on("click", function () {
     $(".back").css("cursor", "pointer");
     $(".back").css("background", "rgba(255, 124, 124, 1)");
     currentIndex++;
-    displayQuestion(currentIndex);
+    displayQuestion(++questIndex);
   }
 });
 
@@ -127,7 +133,7 @@ $(".back").on("click", function () {
     $(".next").css("cursor", "pointer");
     $(".next").css("background", "rgba(255, 124, 124, 1)");
     currentIndex--;
-    displayQuestion(currentIndex);
+    displayQuestion(--questIndex);
   }
 });
 
