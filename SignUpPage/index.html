@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap">
-    <script src="jquery.js"></script>
+    <script src="../jquery.js"></script>
 </head>
 <body>
     <div class="background-circle"></div>
@@ -19,20 +19,25 @@
             <form class="form-data" action="..\StartExamPage\index.html">
                 <label for="fn">First Name</label>
                 <input type="text" id="fn" name="fname" placeholder="Sam">
+                <span id="fn-msg"></span>
                 <label for="ln">Last Name</label>
                 <input type="text" id="ln" name="lname" placeholder="Smith">
+                <span id="ln-msg"></span>
                 <label for="em">Email</label>
                 <input type="email" id="em" name="email" placeholder="example@mail.com">
+                <span id="em-msg"></span>
                 <label for="pw">Password</label>
                 <div class="pwd-input">
                     <input type="password" id="pw" name="pwd" placeholder="***********">
                     <img id="pwd-eye" src="..\images\iconoir_eye.svg" alt="Show Password">
                 </div>
+                <span id="pw-msg"></span>
                 <label for="pw">Confirm Password</label>
                 <div class="pwd-input">
-                    <input type="password" id="pw" name="pwd" placeholder="***********">
-                    <img id="pwd-eye" src="..\images\iconoir_eye.svg" alt="Show Password">
+                    <input type="password" id="pw2" name="pwd" placeholder="***********">
+                    <img id="pwd2-eye" src="..\images\iconoir_eye.svg" alt="Show Password">
                 </div>
+                <span id="pw2-msg"></span>
                 <button type="submit" id="submit-btn"><h4>Sign Up</h4></button>
             </form>
             <p>Already have an account? <a id="signUp-link" href="..\index.html">Login</a></p>
