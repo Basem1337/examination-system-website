@@ -122,6 +122,13 @@ $(".next").on("click", function () {
     currentIndex++;
     displayQuestion(++questIndex);
   }
+  
+
+  if(markArr.includes(currentIndex)){
+    $(".mark i").attr("class","fa-solid fa-bookmark");
+  }else{
+    $(".mark i").attr("class","fa-regular fa-bookmark");
+  }
 });
 
 $(".back").on("click", function () {
@@ -134,6 +141,12 @@ $(".back").on("click", function () {
     $(".next").css("background", "rgba(255, 124, 124, 1)");
     currentIndex--;
     displayQuestion(--questIndex);
+  }
+
+  if(markArr.includes(currentIndex)){
+    $(".mark i").attr("class","fa-solid fa-bookmark");
+  }else{
+    $(".mark i").attr("class","fa-regular fa-bookmark");
   }
 });
 
@@ -155,3 +168,51 @@ $(".submit").on("click", function () {
     window.location.href = "../Failed Page/failed.html";
   }
 });
+
+////////////////////////////////////////////////////////////////////////
+
+let markCount = 0;
+
+let markArr = [];
+
+$(".mark").on("click",function(){
+
+  // console.log(markArr);
+  
+      if ($(this.children).hasClass("fa-regular fa-bookmark")) {
+        $(this.children).attr("class","fa-solid fa-bookmark");
+        $(".marked-quest").append(
+          `<div class="q-mark" id="${currentIndex}"><h6>Question No.${currentIndex+1}</h6><i class="fa-solid fa-trash"></i></div>`
+        );
+        markCount++;
+        if(!markArr.includes(currentIndex)){
+          markArr.push(currentIndex);
+        }
+      } else {
+        $(this.children).attr("class","fa-regular fa-bookmark");
+        $(`#${currentIndex}`).remove();
+      }
+});
+
+$(".marked-quest").on("click", ".q-mark i", function () {
+  let arrInd = markArr.indexOf(Number($(this).closest(".q-mark").attr("id")));
+
+  $(this).closest(".q-mark").remove();
+
+  if(currentIndex == $(this).closest(".q-mark").attr("id")){
+    $($(".mark i")).attr("class","fa-regular fa-bookmark");
+  }
+
+  markArr.splice(arrInd,1);
+});
+
+
+// $(".marked-quest").on("click", ".q-mark", function () {
+//   const markedQuestionIndex = Number($(this).attr("id"));
+//   currentIndex = markedQuestionIndex;
+//   if(currentIndex > (Number($(this).closest(".q-mark").attr("id")))){
+//     displayQuestion(currentIndex - Number($(this).closest(".q-mark").attr("id"))+1);
+//   }else{
+//     displayQuestion(currentIndex + Number($(this).closest(".q-mark").attr("id"))+1);
+//   }
+// });
