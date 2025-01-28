@@ -112,7 +112,6 @@ input {
 }
 
 #pwd-eye {
-  margin-right: 10px;
   display: flex;
   position: absolute;
   right: 7%;
@@ -167,6 +166,10 @@ a {
 @media (min-width: 300px) and (max-width: 600px) {
   .content {
     width: 100%;
+  }
+  #pwd-eye{
+    margin-right: 10px;
+
   }
 
   .obj-3d {
