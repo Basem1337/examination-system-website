@@ -186,6 +186,10 @@ a {
   .obj-3d {
     display: none;
   }
+  .background-circle,.background-circle2{
+    display: none;
+  
+  }
 }
 
 @keyframes glowEffect {

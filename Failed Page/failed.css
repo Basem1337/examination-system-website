@@ -105,4 +105,8 @@ justify-content: center;
     --exam-deg: 88px;
     --innermessage: 14px;
   }
+  .background-circle{
+    width: 400px;
+    height: 400px;
+  }
 }

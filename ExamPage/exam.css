@@ -433,5 +433,10 @@ body {
     width: 69%;
   }
 
+  .background-circle{
+    display: none;
+  
+  }
+
 
 }
