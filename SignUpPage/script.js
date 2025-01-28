@@ -6,10 +6,6 @@ let LnInput = $("#ln");
 let btn = $("#submit-btn");
 
 var counter = 0;
-var flag = true;
-var chk = false;
-
-// console.log(EmInput);
 
 PwdInput.on("keyup", function () {
   var pass = PwdInput.val();
@@ -62,6 +58,7 @@ PwdInput.on("keyup", function () {
 });
 
 var eReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+var nReg = /^[a-zA-Z\s]+$/;
 
 $("#em-msg").css({ display: "hidden" });
 
@@ -69,7 +66,6 @@ $("#pwd-eye").on("click", function () {
   if (PwdInput.attr("type") == "password") {
     PwdInput.attr("type", "text");
     PwdInput.css("border", "none");
-
     $("#pwd-eye").attr("src", "../images/iconoir_eye_close.svg");
   } else {
     PwdInput.attr("type", "password");
@@ -90,6 +86,7 @@ $("#pwd2-eye").on("click", function () {
 
 btn.on("click", function (e) {
   e.preventDefault();
+  var flag = true;
 
   if (!FnInput.val()) {
     $("#fn-msg")
@@ -99,7 +96,8 @@ btn.on("click", function (e) {
       })
       .html("This field is required!");
     FnInput.css({ border: "2px solid red" });
-  } else if (isFinite(FnInput.val())) {
+    flag = false;
+  } else if (!nReg.test(FnInput.val())) {
     $("#fn-msg")
       .css({
         display: "block",
@@ -107,6 +105,7 @@ btn.on("click", function (e) {
       })
       .html("This Field is Characters only..");
     FnInput.css({ border: "2px solid red" });
+    flag = false;
   } else {
     $("#fn-msg")
       .css({
@@ -124,7 +123,8 @@ btn.on("click", function (e) {
       })
       .html("This field is required!");
     LnInput.css({ border: "2px solid red" });
-  } else if (isFinite(LnInput.val())) {
+    flag = false;
+  } else if (!nReg.test(FnInput.val())) {
     $("#ln-msg")
       .css({
         display: "block",
@@ -132,6 +132,7 @@ btn.on("click", function (e) {
       })
       .html("This Field is Characters only..");
     LnInput.css({ border: "2px solid red" });
+    flag = false;
   } else {
     $("#ln-msg")
       .css({
@@ -149,6 +150,7 @@ btn.on("click", function (e) {
       })
       .html("This field is required!");
     EmInput.css({ border: "2px solid red" });
+    flag = false;
   } else if (!eReg.test(EmInput.val())) {
     $("#em-msg")
       .css({
@@ -157,6 +159,7 @@ btn.on("click", function (e) {
       })
       .html("Enter a valid e-mail!");
     EmInput.css({ border: "2px solid red" });
+    flag = false;
   } else {
     $("#em-msg")
       .css({
@@ -174,6 +177,16 @@ btn.on("click", function (e) {
       })
       .html("This field is required!");
     $(".pwd-input").css({ border: "2px solid red" });
+    flag = false;
+  } else if(PwdInput.val().length < 8) {
+    $("#pw-msg")
+      .css({
+        display: "block",
+        color: "red",
+      })
+      .html("Password must be 8 characters!");
+    $(".pwd-input").css({ border: "2px solid red" });
+    flag = false;
   } else {
     $("#pw-msg")
       .css({
@@ -191,6 +204,7 @@ btn.on("click", function (e) {
       })
       .html("This field is required!");
     $(".pwd-input").css({ border: "2px solid red" });
+    flag = false;
   } else if (PwdInput2.val() != PwdInput.val()) {
     $("#pw2-msg")
       .css({
@@ -199,6 +213,7 @@ btn.on("click", function (e) {
       })
       .html("Password doesn't match!");
     $(".pwd-input").css({ border: "2px solid red" });
+    flag = false;
   } else {
     $("#pw2-msg")
       .css({
@@ -206,5 +221,17 @@ btn.on("click", function (e) {
       })
       .html("");
     $(".pwd-input").css({ border: "2px solid #D9D9D9" });
+  }
+
+  if(flag){
+    try {
+      localStorage.setItem("fName", FnInput.val());
+      localStorage.setItem("lName", LnInput.val());
+      localStorage.setItem("email", EmInput.val());
+      localStorage.setItem("pass", PwdInput.val());
+    } catch (error) {
+      console.error("Error with localStorage:", error);
+    }
+    window.location.replace("../index.html");
   }
 });
