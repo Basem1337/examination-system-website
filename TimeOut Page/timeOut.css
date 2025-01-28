@@ -11,6 +11,32 @@
 
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
 body {
   background-color: rgba(36, 36, 36, 1);
   overflow: hidden;
@@ -90,6 +116,11 @@ body {
 i{
   color: #D42044;
   font-size: var(--icon);
+  animation-name: shake;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .circle {

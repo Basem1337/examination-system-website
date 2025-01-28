@@ -178,3 +178,20 @@ ol{
   50% {opacity: 0.8;}
   100% {opacity: 0.5;}
 }
+
+@media (min-width: 200px) and (max-width: 600px) {
+    .bg-wave{
+        display: none;
+    }
+    .obj-3d{
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .content{
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+}

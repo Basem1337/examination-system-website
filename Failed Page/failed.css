@@ -68,9 +68,9 @@ body {
   line-height: normal;
 }
 .message{
-  align-items: center;
-justify-content: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;

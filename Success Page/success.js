@@ -25,9 +25,12 @@ function launchConfetti() {
 
 
 const score = localStorage.getItem("quizScore");
+const FrName = localStorage.getItem("fName");
+const LsName = localStorage.getItem("lName");
+const fullName = FrName + " " + LsName;
 
-document.querySelector(".exam-degree").innerText = `${score}%`;
-  
+$(".exam-degree").text(`${score}%`);
+$("h4").text(`${fullName}`);
 
 window.onload = launchConfetti;
 

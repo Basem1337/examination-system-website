@@ -3,58 +3,6 @@ let PwdInput = $("#pw");
 let PwdInputAll = $(".pwd-input");
 let btn = $("#submit-btn");
 
-var counter = 0;
-
-// console.log(EmInput);
-
-PwdInput.on("keyup",function(){
-
-    var pass = PwdInput.val();
-
-    
-    
-    var strength = 0;
-    var arr = [/.{8,}/, /[a-z]+/, /[0-9]+/, /[A-Z]+/];
-
-    jQuery.map(arr, function(regexp) {
-        if(pass.match(regexp)){
-            strength++;
-        }
-    });
-    
-    switch (strength) {
-        case 1:
-            $("#pw-msg").css({
-                "display":"block",
-                "color":"#DB5247",
-            }).html("Password security: Low");
-            break;
-        case 2:
-            $("#pw-msg").css({
-                "display":"block",
-                "color":"#DBC869",
-            }).html("Password security: Medium");
-            break;
-        case 3:
-            $("#pw-msg").css({
-                "display":"block",
-                "color":"#69DB72",
-            }).html("Password security: Strong");
-            break;
-        case 4:
-            $("#pw-msg").css({
-                "display":"block",
-                "color":"#20D43B",
-            }).html("Password security: Very Strong!");
-            break;
-        default:
-            break;
-    }
-    
-    
-})
-
-
 let eReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let emAddr = localStorage.getItem("email");
