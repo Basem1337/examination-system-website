@@ -1,13 +1,3 @@
-////////to add the background color on the selected option//////
-//note: i think the user should not remove his choise!!
-$(".option").on("click", function () {
-  if ($(this).hasClass("active")) {
-    $(this).removeClass("active");
-  } else {
-    $(".option").removeClass("active");
-    $(this).addClass("active");
-  }
-});
 /////////////////
 //////a setinterval function to simulate time and will be used to call the function timeout.
 //added a shake effect when turning red.
@@ -34,6 +24,7 @@ let x = setInterval(() => {
   }
   if (time <= 0) {
     clearInterval(x);
+    window.location.href = "../TimeOut Page/timeOut.html";
   } else {
     time--;
   }
@@ -70,4 +61,91 @@ $(window).on("resize", function () {
 $("#close").on("click", function () {
   $(".marked").css("display", "none");
   $(".menu").css("display", "flex");
+});
+////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+let questions = [];
+let currentIndex = 0;
+let userAnswers = [];
+
+$.getJSON("questions.json", function (data) {
+  questions = data;
+  userAnswers = Array(questions.length).fill(null);
+  displayQuestion(currentIndex);
+});
+
+function displayQuestion(index) {
+  const question = questions[index];
+  $(".question-text").text(question.question);
+  $(".q-number").text(`${index + 1}/${questions.length}`);
+  $(".num").text(`${index + 1}`);
+
+  $(".option").remove();
+
+  question.answers.forEach((answer, i) => {
+    $(".answers").append(`
+        <div class="option" data-index="${i}">
+          <p>${answer}</p>
+        </div>
+      `);
+  });
+
+  if (userAnswers[index] !== null) {
+    $(`.option[data-index="${userAnswers[index]}"]`).addClass("active");
+  }
+}
+
+$(".mid-section").on("click", ".option", function () {
+  $(".option").removeClass("active");
+  $(this).addClass("active");
+
+  const selectedIndex = $(this).data("index");
+  userAnswers[currentIndex] = selectedIndex;
+});
+
+$(".next").on("click", function () {
+  if (currentIndex === questions.length - 2) {
+    $(".next").css("cursor", "default");
+
+    $(".next").css("background", "rgba(233, 233, 233, 1)");
+  }
+  if (currentIndex < questions.length - 1) {
+    $(".back").css("cursor", "pointer");
+    $(".back").css("background", "rgba(255, 124, 124, 1)");
+    currentIndex++;
+    displayQuestion(currentIndex);
+  }
+});
+
+$(".back").on("click", function () {
+  if (currentIndex === 1) {
+    $(".back").css("cursor", "default");
+    $(".back").css("background", "rgba(233, 233, 233, 1)");
+  }
+  if (currentIndex > 0) {
+    $(".next").css("cursor", "pointer");
+    $(".next").css("background", "rgba(255, 124, 124, 1)");
+    currentIndex--;
+    displayQuestion(currentIndex);
+  }
+});
+
+$(".submit").on("click", function () {
+  let correctAnswers = 0;
+
+  questions.forEach((question, index) => {
+    if (userAnswers[index] === question.correct) {
+      correctAnswers++;
+    }
+  });
+
+  const percentage = (correctAnswers / questions.length) * 100;
+
+  localStorage.setItem("quizScore", percentage);
+  if (percentage > 50) {
+    window.location.href = "../Success Page/success.html";
+  } else {
+    window.location.href = "../Failed Page/failed.html";
+  }
 });

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "answers": [
+      "HyperText Markup Language",
+      "Hyperlink Text Mark Language",
+      "Hyper Tool Markup Language",
+      "Hyper Text Management Language"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "Which language runs in a web browser?",
+    "answers": [
+      "Java",
+      "C",
+      "Python",
+      "JavaScript"
+    ],
+    "correct": 3
+  },
+  {
+    "question": "What does CSS stand for?",
+    "answers": [
+      "Cascading Style Sheets",
+      "Computer Style Sheets",
+      "Colorful Style Sheets",
+      "Creative Style Sheets"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "Which company developed JavaScript?",
+    "answers": [
+      "Netscape",
+      "Microsoft",
+      "Google",
+      "Apple"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "What is the use of the `isNaN` function?",
+    "answers": [
+      "To check if a value is not a number",
+      "To convert a number to a string",
+      "To round a number",
+      "To check if a value is a number"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "What is the correct way to declare a variable in JavaScript?",
+    "answers": [
+      "var myVar",
+      "variable myVar",
+      "v myVar",
+      "let var myVar"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "Which of the following is not a JavaScript data type?",
+    "answers": [
+      "String",
+      "Boolean",
+      "Float",
+      "Undefined"
+    ],
+    "correct": 2
+  },
+  {
+    "question": "What is the correct syntax to log something to the console?",
+    "answers": [
+      "console.log('text')",
+      "console.print('text')",
+      "log.console('text')",
+      "console.write('text')"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "Which symbol is used for comments in JavaScript?",
+    "answers": [
+      "//",
+      "*/",
+      "#",
+      "/* */"
+    ],
+    "correct": 0
+  },
+  {
+    "question": "How do you declare a constant in JavaScript?",
+    "answers": [
+      "const myVar",
+      "constant myVar",
+      "let const myVar",
+      "var const myVar"
+    ],
+    "correct": 0
+  }
+]

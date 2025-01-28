@@ -23,4 +23,11 @@ function launchConfetti() {
   })();
 }
 
+
+const score = localStorage.getItem("quizScore");
+
+document.querySelector(".exam-degree").innerText = `${score}%`;
+  
+
 window.onload = launchConfetti;
+
