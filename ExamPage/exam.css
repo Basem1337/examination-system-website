@@ -20,7 +20,7 @@
 
 }
 
-.q-mark{
+.q-mark {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,7 @@
   border-radius: 10px;
 }
 
-h6 ~ i{
+h6~i {
   color: red;
 }
 
@@ -97,8 +97,7 @@ body {
 
 .exam-name {
 
-  left: 45px;
-  top: 30px;
+
   color: #D42044;
   font-size: var(--exam-name);
   font-style: normal;
@@ -342,11 +341,11 @@ body {
 
 }
 
-/* .marked-quest{
+.marked-quest{
   overflow: scroll;
   width: auto;
   height: auto;
-} */
+}
 
 .side {
   display: flex;
@@ -369,14 +368,17 @@ body {
   background: #E9E9E9;
   font-size: var(--marked);
 }
-.marked .top{
+
+.marked .top {
   padding: 0px 0px 0px 20px;
   height: 10%;
   display: flex;
   gap: 20px;
   align-items: center
 }
-#close{
+
+#close {
+  font-size: 20px;
   display: none;
   cursor: pointer;
 }
@@ -388,31 +390,15 @@ body {
 
 }
 
-@media (min-width: 551px) and (max-width: 780px) {
 
-  .next {
-    width: 10%;
-  }
-
-  .back {
-    width: 10%;
-  }
-
-  .submit {
-    width: 73%;
-  }
-
-
-}
-
-@media (min-width: 300px) and (max-width: 600px) {
+@media (min-width: 412px) and (max-width: 932px) /*pixle7 & s20ultra & 14pro  */{
   :root {
-    --exam-name: 22px;
-    --timer-div: 34px;
-    --timer: 34px;
+    --exam-name: 20px;
+    --timer-div: 25px;
+    --timer: 25px;
     --remaining: 14px;
     --mark: 20px;
-    --q-p: 16px;
+    --q-p: 14px;
     --option: 14px;
     --q-num: 16px;
     --back: 28px;
@@ -423,21 +409,60 @@ body {
 
   }
 
+  .content {
+    width: 370px;
+  }
+
+  .q div {
+    width: 22px;
+    height: 22px;
+  }
+
+  .question-text {
+    text-align: left;
+
+  }
+
+  .titleAndMark {
+    padding: 0px;
+  }
+
+  .top-section {
+    padding: 10px;
+    margin-bottom: 10px;
+
+  }
+  .bottom-section{
+    padding: 0px;
+
+  }
+
+
   .menu {
-    display: flex;
     color:#3C3C3C;
+    display: flex;
     cursor: pointer;
   }
-  .menu:hover{
+
+  .menu:hover {
     color: #737373;
   }
 
   .marked {
     display: none;
+    border-radius: 20px;
+    top:18%;
+    left:5%;
+  }
+  .marked-quest{
+    overflow: scroll;
+    width: auto;
+    height: auto;
   }
 
   .side {
-    width:0%;
+    width: 0%;
+    display: none;
   }
 
   .question {
@@ -456,9 +481,9 @@ body {
     width: 69%;
   }
 
-  .background-circle{
+  .background-circle {
     display: none;
-  
+
   }
 
 

@@ -1,7 +1,7 @@
 /////////////////
 //////a setinterval function to simulate time and will be used to call the function timeout.
 //added a shake effect when turning red.
-let time = 6 * 60;
+let time = 6 * 600;
 
 let x = setInterval(() => {
   let minutes = Math.floor(time / 60);
@@ -34,10 +34,14 @@ let x = setInterval(() => {
 $(".menu").on("click", function () {
   $("#close").css("display", "flex");
   $(".menu").css("display", "none");
+  $(".side").css("display","flex")
   $(".marked")
     .css("display", "flex")
     .css("position", "absolute")
-    .css("width", "500px");
+    
+    .css("width", "370px")
+    .css("height", "590px");
+    
 });
 $(window).on("resize", function () {
   if ($(window).width() < 600) {
@@ -50,8 +54,8 @@ $(window).on("resize", function () {
     $(".marked").css({
       display: "flex",
       position: "relative",
-      width: "80%",
-      height: "84%",
+      width: "50%",
+      height: "86%",
     });
     $("#close").css("display", "none");
   }
