@@ -49,25 +49,25 @@ body {
 
 .background-circle,
 .background-circle2 {
-  width: 800px;
-  height: 800px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  opacity: 0.5;
-  background: #D42044;
-  position: absolute;
-  filter: blur(250px);
-  top: auto;
-  left: auto;
-  bottom: -400px;
-  right: auto;
-  transform: translateX(50%);
-  z-index: -1;
-  animation-name: glowEffect;
-  animation-duration: 15s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 1s;
-  animation-iteration-count: infinite;
+    width: 50vw;
+    height: 50vw;
+    max-width: 800px;
+    max-height: 800px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    opacity: 0.5;
+    background: #D42044;
+    position: absolute;
+    filter: blur(20vw);
+    bottom: -60vh;
+    right: auto;
+    transform: translateX(50%);
+    z-index: -1;
+    animation-name: glowEffect;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
 }
 
 .background-circle2 {
@@ -165,17 +165,18 @@ a {
 
 @media (min-width: 600px) and (max-width: 1200px) {
   .content {
-    width: 60%;
+    width: 90%;
   }
 
   .obj-3d {
-    width: 40%;
+    width: 80%;
+    padding: 0%;
   }
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
   .content {
-    width: 100%;
+    width: 90%;
   }
 
   #pwd-eye {
@@ -183,12 +184,8 @@ a {
 
   }
 
-  .obj-3d {
+  .obj-3d, .background-circle2, .background-circle {
     display: none;
-  }
-  .background-circle,.background-circle2{
-    display: none;
-  
   }
 }
 

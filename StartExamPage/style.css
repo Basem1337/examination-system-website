@@ -171,17 +171,25 @@ ol{
     top: 0px;
     z-index: -3;
     width: 55%;
-    /* filter: saturate(0); */
 }
 @keyframes glowEffect {
-  0% {opacity: 0.5;}
-  50% {opacity: 0.8;}
-  100% {opacity: 0.5;}
+    0% {opacity: 0.5;}
+    50% {opacity: 0.8;}
+    100% {opacity: 0.5;}
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    .bg-wave{
+        display: none;
+    }
 }
 
 @media (min-width: 200px) and (max-width: 600px) {
-    .bg-wave{
+    .bg-wave,.obj-3d{
         display: none;
+    }
+    .background-circle{
+        width: 250px;
     }
     .obj-3d{
         justify-content: center;
@@ -191,7 +199,7 @@ ol{
         flex-direction: column;
     }
     .content{
-        justify-content: space-around;
-        align-items: flex-end;
+        width: 100%;
+        padding: 20px;
     }
 }
