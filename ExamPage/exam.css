@@ -342,7 +342,7 @@ body {
 }
 
 .marked-quest{
-  overflow: scroll;
+  overflow-y: scroll;
   width: auto;
   height: auto;
 }

@@ -1,7 +1,7 @@
 /////////////////
 //////a setinterval function to simulate time and will be used to call the function timeout.
 //added a shake effect when turning red.
-let time = 6 * 600;
+let time = 6 * 60;
 
 let x = setInterval(() => {
   let minutes = Math.floor(time / 60);
@@ -211,12 +211,16 @@ $(".marked-quest").on("click", ".q-mark i", function () {
 });
 
 
-// $(".marked-quest").on("click", ".q-mark", function () {
-//   const markedQuestionIndex = Number($(this).attr("id"));
-//   currentIndex = markedQuestionIndex;
-//   if(currentIndex > (Number($(this).closest(".q-mark").attr("id")))){
-//     displayQuestion(currentIndex - Number($(this).closest(".q-mark").attr("id"))+1);
-//   }else{
-//     displayQuestion(currentIndex + Number($(this).closest(".q-mark").attr("id"))+1);
-//   }
-// });
+$(".marked-quest").on("click", ".q-mark", function () {
+  const markedQuestionIndex = Number($(this).attr("id"));
+  currentIndex = markedQuestionIndex;
+  questIndex = markedQuestionIndex;
+  displayQuestion(currentIndex);
+
+  if (markArr.includes(currentIndex)) {
+    $(".mark i").attr("class", "fa-solid fa-bookmark");
+  } else {
+    $(".mark i").attr("class", "fa-regular fa-bookmark");
+  }
+});
+
