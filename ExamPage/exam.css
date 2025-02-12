@@ -43,7 +43,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: 1rem;
 }
 
 .background-circle {
@@ -396,6 +396,7 @@ body {
 
   .content {
     width: 100%;
+    margin: 0.75rem;
   }
 
   .q div {
@@ -419,18 +420,6 @@ body {
   }
   .bottom-section{
     padding: 0px;
-
-  }
-
-
-  .menu {
-    color:#3C3C3C;
-    display: flex;
-    cursor: pointer;
-  }
-
-  .menu:hover {
-    color: #737373;
   }
 
 
@@ -443,7 +432,9 @@ body {
 
 
   .question {
-    width: 100%;
+    
+    flex-basis: 100%;
+
   }
 
   .next {
@@ -465,7 +456,7 @@ body {
 
 
 }
-@media (min-width: 200px) and (max-width: 600px) {
+@media (max-width: 720px) {
   :root {
     --exam-name: 20px;
     --timer-div: 25px;
@@ -484,7 +475,8 @@ body {
   }
 
   .content {
-    width: auto;
+    width: 100%;
+    margin: 0.75rem;
   }
 
   .q div {
@@ -513,9 +505,19 @@ body {
 
 
   .menu {
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: 2px solid #3C3C3C;
+    padding: 10px;
     color:#3C3C3C;
     display: flex;
+    gap: 10px;
     cursor: pointer;
+    background-color:#ffffff;
+  }
+
+  .menu i {
+    color:#D42044;
   }
 
   .menu:hover {
@@ -544,7 +546,7 @@ body {
   }
 
   .question {
-    width: 100%;
+    flex-basis: 100%;
   }
 
   .next {

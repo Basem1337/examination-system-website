@@ -58,7 +58,7 @@ PwdInput.on("keyup", function () {
 });
 
 var eReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-var nReg = /^[a-zA-Z\s]+$/;
+var nReg = /^[A-Za-z]+$/;
 
 $("#em-msg").css({ display: "hidden" });
 

@@ -78,6 +78,15 @@ body {
   bottom: auto;
 }
 
+.full-name{
+  display: flex;
+  gap: 10px;
+}
+
+.first-name, .last-name{
+  width: 50%;
+}
+
 .content {
   margin: 50px;
   display: flex;
@@ -96,11 +105,11 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1% 5%;
+  padding: 3% 5%;
 }
 
 label {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 input {
@@ -160,7 +169,9 @@ input[type="text"] {
 
 @media (min-width: 600px) and (max-width: 1200px) {
   .content {
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
+    margin: 0.75rem;
   }
 
   .obj-3d {
@@ -170,13 +181,14 @@ input[type="text"] {
 
 }
 
-@media (min-width: 300px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .content {
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
+    margin: 0.75rem;
   }
 
-  #pwd-eye,
-  #pwd2-eye {
+  #pwd-eye {
     margin-right: 10px;
 
   }
@@ -184,7 +196,6 @@ input[type="text"] {
   .obj-3d, .background-circle2, .background-circle {
     display: none;
   }
-  
 }
 
 @keyframes glowEffect {

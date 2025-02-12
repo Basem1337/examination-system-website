@@ -122,20 +122,19 @@ i{
   animation-delay: 0.5s;
   animation-iteration-count: infinite;
 }
-@media (min-width: 300px) and (max-width: 600px) {
-  .circle {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-  }
-  :root {
-    --exam-name: 18px;
-    --icon: 95px;
-    --sorry: 32px;
-    --innermessage: 14px;
+@media (max-width: 600px) {
+  .circle{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
   }
   .background-circle{
-    width: 400px;
-    height: 400px;
+    display: none;
   }
-}
+  :root {
+    --exam-name: 20px;
+    --exam-deg: 96px;
+    --congrats: 36px;
+    --innermessage: 14px;
+  }
+  }

@@ -96,7 +96,7 @@ body {
   line-height: normal;
 }
 
-@media (min-width: 200px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .circle{
     border-radius: 0;
     width: 100%;

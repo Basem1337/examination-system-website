@@ -80,6 +80,7 @@ body {
 
 .content {
   margin: 5%;
+  /* min-width: 300px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +166,9 @@ a {
 
 @media (min-width: 600px) and (max-width: 1200px) {
   .content {
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
+    margin: 0.75rem;
   }
 
   .obj-3d {
@@ -174,9 +177,11 @@ a {
   }
 }
 
-@media (min-width: 300px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .content {
-    width: 90%;
+    /* width: 90%; */
+    width: 100%;
+    margin: 0.75rem;
   }
 
   #pwd-eye {

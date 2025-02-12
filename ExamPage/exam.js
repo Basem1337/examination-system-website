@@ -70,12 +70,22 @@ function randNum(min, max) {
 
 let questions = [];
 let currentIndex = 0;
-let questIndex = randNum(0, 9);
+let questIndex = 0;
 let userAnswers = [];
 
 $.getJSON("questions.json", function (data) {
   questions = data;
   userAnswers = Array(questions.length).fill(null);
+  
+  let shuffledQuestions = []
+  let numOfIteration = questions.length;
+  for(let i = 0; i < numOfIteration; i++){
+    let num = randNum(0, questions.length);
+    shuffledQuestions.push(questions[num]);
+    questions.splice(num, 1);
+  }
+  
+  questions = shuffledQuestions;
   displayQuestion(questIndex);
 });
 
@@ -173,8 +183,7 @@ let markCount = 0;
 let markArr = [];
 
 $(".mark").on("click", function () {
-  // console.log(markArr);
-
+  
   if ($(this.children).hasClass("fa-regular fa-bookmark")) {
     $(this.children).attr("class", "fa-solid fa-bookmark");
     $(".marked-quest").append(
@@ -208,6 +217,8 @@ $(".marked-quest").on("click", ".q-mark", function () {
   const markedQuestionIndex = Number($(this).attr("id"));
   currentIndex = markedQuestionIndex;
   questIndex = markedQuestionIndex;
+  console.log(questions);
+  
   displayQuestion(currentIndex);
 
   if (markArr.includes(currentIndex)) {

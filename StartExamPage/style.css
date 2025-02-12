@@ -165,12 +165,27 @@ ol{
     list-style: none;
 }
 
-.wave{
-    position: absolute;
+.bg-wave{
+     position: absolute;
     right: 0px;
     top: 0px;
     z-index: -3;
     width: 55%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.wave{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    /* position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -3;
+    width: 55%;
+    object-fit: cover; */
 }
 @keyframes glowEffect {
     0% {opacity: 0.5;}
@@ -180,11 +195,11 @@ ol{
 
 @media (min-width: 600px) and (max-width: 1200px) {
     .bg-wave{
-        display: none;
+        /* display: none; */
     }
 }
 
-@media (min-width: 200px) and (max-width: 600px) {
+@media (max-width: 600px) {
     .bg-wave,.obj-3d{
         display: none;
     }
