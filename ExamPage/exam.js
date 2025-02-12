@@ -34,18 +34,16 @@ let x = setInterval(() => {
 $(".menu").on("click", function () {
   $("#close").css("display", "flex");
   $(".menu").css("display", "none");
-  $(".side").css("display","flex")
-  $(".marked")
-    .css("display", "flex")
-    .css("position", "absolute")
-    
-    .css("width", "370px")
-    .css("height", "590px");
-    
+  $(".side").css("display", "flex");
+  $(".marked").css("display", "flex");
 });
 $(window).on("resize", function () {
   if ($(window).width() < 600) {
     $(".menu").css("display", "flex");
+    $("#close").css("display", "flex");
+    $(".marked").css({
+      display: "none",
+    });
   }
 });
 $(window).on("resize", function () {
@@ -53,9 +51,6 @@ $(window).on("resize", function () {
     $(".menu").css("display", "none");
     $(".marked").css({
       display: "flex",
-      position: "relative",
-      width: "50%",
-      height: "86%",
     });
     $("#close").css("display", "none");
   }
@@ -84,9 +79,8 @@ $.getJSON("questions.json", function (data) {
   displayQuestion(questIndex);
 });
 
-
 function displayQuestion(index) {
-  const question = questions[index%questions.length];
+  const question = questions[index % questions.length];
   $(".question-text").text(question.question);
   $(".q-number").text(`${currentIndex + 1}/${questions.length}`);
   $(".num").text(`${currentIndex + 1}`);
@@ -126,12 +120,11 @@ $(".next").on("click", function () {
     currentIndex++;
     displayQuestion(++questIndex);
   }
-  
 
-  if(markArr.includes(currentIndex)){
-    $(".mark i").attr("class","fa-solid fa-bookmark");
-  }else{
-    $(".mark i").attr("class","fa-regular fa-bookmark");
+  if (markArr.includes(currentIndex)) {
+    $(".mark i").attr("class", "fa-solid fa-bookmark");
+  } else {
+    $(".mark i").attr("class", "fa-regular fa-bookmark");
   }
 });
 
@@ -147,10 +140,10 @@ $(".back").on("click", function () {
     displayQuestion(--questIndex);
   }
 
-  if(markArr.includes(currentIndex)){
-    $(".mark i").attr("class","fa-solid fa-bookmark");
-  }else{
-    $(".mark i").attr("class","fa-regular fa-bookmark");
+  if (markArr.includes(currentIndex)) {
+    $(".mark i").attr("class", "fa-solid fa-bookmark");
+  } else {
+    $(".mark i").attr("class", "fa-regular fa-bookmark");
   }
 });
 
@@ -179,23 +172,24 @@ let markCount = 0;
 
 let markArr = [];
 
-$(".mark").on("click",function(){
-
+$(".mark").on("click", function () {
   // console.log(markArr);
-  
-      if ($(this.children).hasClass("fa-regular fa-bookmark")) {
-        $(this.children).attr("class","fa-solid fa-bookmark");
-        $(".marked-quest").append(
-          `<div class="q-mark" id="${currentIndex}"><h6>Question No.${currentIndex+1}</h6><i class="fa-solid fa-trash"></i></div>`
-        );
-        markCount++;
-        if(!markArr.includes(currentIndex)){
-          markArr.push(currentIndex);
-        }
-      } else {
-        $(this.children).attr("class","fa-regular fa-bookmark");
-        $(`#${currentIndex}`).remove();
-      }
+
+  if ($(this.children).hasClass("fa-regular fa-bookmark")) {
+    $(this.children).attr("class", "fa-solid fa-bookmark");
+    $(".marked-quest").append(
+      `<div class="q-mark" id="${currentIndex}"><h6>Question No.${
+        currentIndex + 1
+      }</h6><i class="fa-solid fa-trash"></i></div>`
+    );
+    markCount++;
+    if (!markArr.includes(currentIndex)) {
+      markArr.push(currentIndex);
+    }
+  } else {
+    $(this.children).attr("class", "fa-regular fa-bookmark");
+    $(`#${currentIndex}`).remove();
+  }
 });
 
 $(".marked-quest").on("click", ".q-mark i", function () {
@@ -203,13 +197,12 @@ $(".marked-quest").on("click", ".q-mark i", function () {
 
   $(this).closest(".q-mark").remove();
 
-  if(currentIndex == $(this).closest(".q-mark").attr("id")){
-    $($(".mark i")).attr("class","fa-regular fa-bookmark");
+  if (currentIndex == $(this).closest(".q-mark").attr("id")) {
+    $($(".mark i")).attr("class", "fa-regular fa-bookmark");
   }
 
-  markArr.splice(arrInd,1);
+  markArr.splice(arrInd, 1);
 });
-
 
 $(".marked-quest").on("click", ".q-mark", function () {
   const markedQuestionIndex = Number($(this).attr("id"));
@@ -223,4 +216,3 @@ $(".marked-quest").on("click", ".q-mark", function () {
     $(".mark i").attr("class", "fa-regular fa-bookmark");
   }
 });
-
