@@ -8,7 +8,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exam</title>
@@ -24,6 +24,15 @@
   <body>
     <div class="background-circle"></div>
     <div class="content">
+      <div class="error">
+        <div class="error-img">
+          <img src="../images/dead.svg" alt="" />
+        </div>
+        <div class="error-messege">
+          <h1>Error 404</h1>
+          <h2>We couldn't find the questions, Try again later.</h2>
+        </div>
+      </div>
       <div class="question">
         <div class="top-section">
           <p class="exam-name">Javascript Exam</p>
@@ -44,9 +53,7 @@
             </div>
             <div class="mark"><i class="fa-regular fa-bookmark"></i></div>
           </div>
-          <div class="answers">
-
-          </div>
+          <div class="answers"></div>
           <div class="q-number"><p>1/10</p></div>
         </div>
         <div class="bottom-section">
@@ -54,18 +61,20 @@
           <div class="submit"><p>Submit</p></div>
           <div class="next"><i class="fa-solid fa-arrow-right"></i></div>
         </div>
-      <div class="menu"><i class="fa-regular fa-rectangle-list"></i><h6>Marked Questions</h6></div>
-
+        <div class="menu">
+          <i class="fa-regular fa-rectangle-list"></i>
+          <h6>Marked Questions</h6>
+        </div>
       </div>
 
       <div class="side">
-        <div class="marked"><div class="top">
-          <i id="close" class="fa-regular fa-rectangle-xmark"></i>
-          <p>Marked Questions</p>
+        <div class="marked">
+          <div class="top">
+            <i id="close" class="fa-regular fa-rectangle-xmark"></i>
+            <p>Marked Questions</p>
+          </div>
+          <div class="marked-quest"></div>
         </div>
-        <div class="marked-quest">
-        </div>
-      </div>
       </div>
     </div>
 

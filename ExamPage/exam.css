@@ -10,7 +10,10 @@
   --back: 30px;
   --submit: 18px;
   --next: 30px;
-  --marked: 20px --menu:20px;
+  --marked: 20px;
+  --menu: 20px;
+  --error1: 48px;
+  --error2: 24px;
 }
 
 * {
@@ -66,7 +69,6 @@ body {
 .content {
   display: flex;
   flex-direction: row;
-
   width: 1420px;
   height: 590px;
   border-radius: 20px;
@@ -74,6 +76,38 @@ body {
   box-shadow: 12px 12px 20px 0px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
+
+.error {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.error-img {
+  scale: 80%;
+}
+
+.error-messege {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error-messege h1 {
+  font-size: var(--error1);
+  color: #000000;
+}
+
+.error-messege h2 {
+  font-size: var(--error2);
+  color: #898989;
+  font-weight: normal;
+  width: 350px;
+}
+
 
 .menu {
   display: none;
@@ -341,7 +375,7 @@ body {
 
 }
 
-.marked-quest{
+.marked-quest {
   overflow-y: scroll;
   width: auto;
   height: auto;
@@ -418,12 +452,13 @@ body {
     margin-bottom: 10px;
 
   }
-  .bottom-section{
+
+  .bottom-section {
     padding: 0px;
   }
 
 
-  .marked-quest{
+  .marked-quest {
     overflow: scroll;
     width: auto;
     height: auto;
@@ -432,7 +467,7 @@ body {
 
 
   .question {
-    
+
     flex-basis: 100%;
 
   }
@@ -456,6 +491,47 @@ body {
 
 
 }
+@media (max-width:800px) {
+  .error-img {
+    scale: 60%;
+  }
+  :root {
+    --error1: 40px;
+    --error2: 20px;
+  }
+  .error{
+    gap: 0px;
+  }
+  .error-messege h2{
+    width: 300px;
+  }
+}
+@media (max-width:700px) {
+  .error-img {
+    scale: 40%;
+  }
+  :root {
+    --error1: 30px;
+    --error2: 15px;
+  }
+.error{
+  flex-direction: column;
+  text-align: center
+}
+
+  .error-messege h2{
+    width: 200px;
+  }
+}
+
+
+@media(max-width: 250px) {
+  :root {
+    --error1: 30px;
+    --error2: 15px;
+  }
+}
+
 @media (max-width: 720px) {
   :root {
     --exam-name: 20px;
@@ -498,7 +574,8 @@ body {
     margin-bottom: 10px;
 
   }
-  .bottom-section{
+
+  .bottom-section {
     padding: 0px;
 
   }
@@ -509,15 +586,15 @@ body {
     border-radius: 10px;
     border: 2px solid #3C3C3C;
     padding: 10px;
-    color:#3C3C3C;
+    color: #3C3C3C;
     display: flex;
     gap: 10px;
     cursor: pointer;
-    background-color:#ffffff;
+    background-color: #ffffff;
   }
 
   .menu i {
-    color:#D42044;
+    color: #D42044;
   }
 
   .menu:hover {
@@ -529,12 +606,13 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     border-radius: 20px;
-    width: 100%;  
-    height: 590px;  
-}
-  .marked-quest{
+    width: 100%;
+    height: 590px;
+  }
+
+  .marked-quest {
     overflow: scroll;
     width: auto;
     height: auto;
