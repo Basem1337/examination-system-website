@@ -238,6 +238,11 @@ $(".marked-quest").on("click", ".gotoQuest", function () {
     $(".next").css("background", "rgba(233, 233, 233, 1)");
   }
 
+  if ($(window).width() < 720) {
+    $(".menu").css("display", "flex");
+    $(".marked").css("display", "none");
+  }
+
   displayQuestion(currentIndex);
 
   if (markArr.includes(currentIndex)) {
@@ -246,3 +251,7 @@ $(".marked-quest").on("click", ".gotoQuest", function () {
     $(".mark i").attr("class", "fa-regular fa-bookmark");
   }
 });
+
+$(".goHome").on("click",function(){
+  window.location.href = "../StartExamPage/index.html";
+})

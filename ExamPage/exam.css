@@ -113,6 +113,23 @@ body {
   width: 350px;
 }
 
+.goHome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #D42044;
+  color: white;
+  cursor: pointer;
+}
+
+.goHome:hover{
+  background-color: #a71935;
+}
 
 .menu {
   display: none;
@@ -533,6 +550,10 @@ body {
 
   .error-messege h2{
     width: 200px;
+  }
+
+  .goHome{
+    align-self: center;
   }
 }
 
