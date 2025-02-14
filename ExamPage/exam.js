@@ -1,7 +1,8 @@
 /////////////////
 //////a setinterval function to simulate time and will be used to call the function timeout.
 //added a shake effect when turning red.
-let time = 6 * 60;
+let time = 1.5 * 60;
+let timeWarn = time*0.5;
 
 let x = setInterval(() => {
   let minutes = Math.floor(time / 60);
@@ -10,7 +11,7 @@ let x = setInterval(() => {
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
   $(".time").text(`${minutes}:${seconds}`);
-  if (time <= 90) {
+  if (time <= timeWarn) {
     $(".time").css("color", "#ffd500");
   }
   if (time === 30) {
@@ -24,7 +25,7 @@ let x = setInterval(() => {
   }
   if (time <= 0) {
     clearInterval(x);
-    window.location.href = "../TimeOut Page/timeOut.html";
+    window.location.replace("../TimeOut Page/timeOut.html");
   } else {
     time--;
   }
@@ -88,7 +89,7 @@ $.getJSON("questions.json", function (data) {
   questions = shuffledQuestions;
   displayQuestion(questIndex);
 }).fail(function (jqXHR, textStatus, errorThrown) {
-  $(".question").css("display","none")
+  $(".question").css("display","none");
   $(".side").css("display", "none");
   $(".error").css("display", "flex");
   });
@@ -174,9 +175,9 @@ $(".submit").on("click", function () {
 
   localStorage.setItem("quizScore", percentage);
   if (percentage > 50) {
-    window.location.href = "../Success Page/success.html";
+    window.location.replace("../Success Page/success.html");
   } else {
-    window.location.href = "../Failed Page/failed.html";
+    window.location.replace("../Failed Page/failed.html");
   }
 });
 
@@ -254,4 +255,4 @@ $(".marked-quest").on("click", ".gotoQuest", function () {
 
 $(".goHome").on("click",function(){
   window.location.href = "../StartExamPage/index.html";
-})
+});
