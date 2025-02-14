@@ -73,7 +73,7 @@ let currentIndex = 0;
 let questIndex = 0;
 let userAnswers = [];
 
-$.getJSON("questins.json", function (data) {
+$.getJSON("questions.json", function (data) {
   questions = data;
   userAnswers = Array(questions.length).fill(null);
 
@@ -182,25 +182,24 @@ $(".submit").on("click", function () {
 
 ////////////////////////////////////////////////////////////////////////
 
-let markCount = 0;
-
 let markArr = [];
 
 $(".mark").on("click", function () {
   if ($(this.children).hasClass("fa-regular fa-bookmark")) {
     $(this.children).attr("class", "fa-solid fa-bookmark");
     $(".marked-quest").append(
-      `<div class="q-mark" id="${currentIndex}"><h6>Question No.${
+      `<div class="q-mark" id="${currentIndex}"><div class="gotoQuest" id="${currentIndex}"><h6>Question No.${
         currentIndex + 1
-      }</h6><i class="fa-solid fa-trash"></i></div>`
+      }</h6></div><i class="fa-solid fa-trash"></i></div>`
     );
-    markCount++;
+
     if (!markArr.includes(currentIndex)) {
       markArr.push(currentIndex);
     }
   } else {
     $(this.children).attr("class", "fa-regular fa-bookmark");
     $(`#${currentIndex}`).remove();
+    markArr = markArr.filter((i) => i !== currentIndex);
   }
 });
 
@@ -216,11 +215,28 @@ $(".marked-quest").on("click", ".q-mark i", function () {
   markArr.splice(arrInd, 1);
 });
 
-$(".marked-quest").on("click", ".q-mark", function () {
+$(".marked-quest").on("click", ".gotoQuest", function () {
   const markedQuestionIndex = Number($(this).attr("id"));
   currentIndex = markedQuestionIndex;
   questIndex = markedQuestionIndex;
   console.log(questions);
+
+  if(currentIndex == 0){
+    $(".back").css("cursor", "default");
+    $(".back").css("background", "rgba(233, 233, 233, 1)");
+  }
+
+  if(currentIndex > 0){
+    $(".back").css("cursor", "pointer");
+    $(".back").css("background", "rgba(255, 124, 124, 1)");
+    $(".next").css("cursor", "pointer");
+    $(".next").css("background", "rgba(255, 124, 124, 1)");
+  }
+
+  if(currentIndex == questions.length-1){
+    $(".next").css("cursor", "default");
+    $(".next").css("background", "rgba(233, 233, 233, 1)");
+  }
 
   displayQuestion(currentIndex);
 
