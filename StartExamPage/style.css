@@ -142,7 +142,7 @@ body {
 
 .cheer{
     color: #FF7C7C;
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 
 .sub{
@@ -166,7 +166,7 @@ ol{
 }
 
 .bg-wave{
-     position: absolute;
+    position: absolute;
     right: 0px;
     top: 0px;
     z-index: -3;
@@ -194,9 +194,7 @@ ol{
 }
 
 @media (min-width: 600px) and (max-width: 1200px) {
-    .bg-wave{
-        /* display: none; */
-    }
+
 }
 
 @media (max-width: 600px) {

@@ -1,7 +1,8 @@
 /////////////////
 //////a setinterval function to simulate time and will be used to call the function timeout.
 //added a shake effect when turning red.
-let time = 1.5 * 60;
+let getTime = localStorage.getItem("testDuration");
+let time = getTime * 60;
 let timeWarn = time*0.5;
 
 let x = setInterval(() => {

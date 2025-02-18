@@ -124,7 +124,7 @@ btn.on("click", function (e) {
       .html("This field is required!");
     LnInput.css({ border: "2px solid red" });
     flag = false;
-  } else if (!nReg.test(FnInput.val())) {
+  } else if (!nReg.test(LnInput.val())) {
     $("#ln-msg")
       .css({
         display: "block",

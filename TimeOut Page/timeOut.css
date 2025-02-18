@@ -113,7 +113,8 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-i{
+
+p~i{
   color: #D42044;
   font-size: var(--icon);
   animation-name: shake;
@@ -122,6 +123,28 @@ i{
   animation-delay: 0.5s;
   animation-iteration-count: infinite;
 }
+
+.go-home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  width: 140px;
+  height: 40px;
+  border: 2px solid #D42044;
+  border-radius: 5px;
+  background-color: white;
+  color: #D42044;
+  cursor: pointer;
+}
+
+.go-home:hover{
+  border: none;
+  background-color: #D42044;
+  color: white;
+}
+
 @media (max-width: 600px) {
   .circle{
     border-radius: 0;

@@ -1,3 +1,7 @@
+$(".go-home").on("click",function(){
+  window.location.replace("../StartExamPage/index.html");
+});
+
 function launchConfetti() {
   const duration = 5000;
   const end = Date.now() + duration;
